@@ -1,24 +1,24 @@
-# Modern Book Catalog
+# Katalog Buku Modern
 
-A fully responsive book/catalog landing page built with Next.js 16 that showcases 12 books from the DummyJSON API. The page mimics a polished marketing site with hero, curated collections, flash-sale countdown, and a real-time searchable grid of book cards.
+Landing page katalog buku yang responsif dan interaktif dengan Next.js 16. Data diambil dari API DummyJSON (12 produk diasumsikan sebagai buku). UI menonjolkan hero, grid kartu, search real-time, countdown promo kilat, serta state kosong khusus.
 
 ![Modern Book Catalog UI](public/showcase.png)
 
-## Tech Stack
+## Stack Teknologi
 - Next.js App Router (React 19)
-- Tailwind CSS 4 for utility-first styling
-- Axios for API requests
-- Lucide icons (`SlidersHorizontal`) and custom illustrations for UX polish
+- Tailwind CSS 4 untuk styling utilitas
+- Axios sebagai klien HTTP
+- Ikon Lucide (`SlidersHorizontal`) dan ilustrasi custom untuk pengalaman UX yang rapi
 
-## Features
-- **Responsive grid layout**: `grid-cols-1` on mobile and up to three columns on desktop (`lg:grid-cols-3`) to keep cards aligned during viewport changes.
-- **Real-time search + category filter**: Client-side filtering updates instantly as you type and supports optional category pills.
-- **Custom empty state & 404**: Centered illustration (`/nobooks.png`) with friendly copy when search results vanish, plus a dedicated `/not-found` page for mistyped URLs.
-- **Flash-sale teaser**: Countdown hook and highlight cards share the same fetched data to keep UI consistent.
-- **Semantic layout**: `Header`, `Hero`, `LandingContent`, and `Footer` components keep the page modular and easy to extend.
+## Fitur Utama
+- **Grid responsif**: 1 kolom di mobile dan hingga 3 kolom di desktop (`lg:grid-cols-3`) agar transisi layout tetap mulus saat viewport diubah.
+- **Pencarian real-time + filter kategori**: Input dan dropdown kategori mem-filter client-side tanpa reload halaman.
+- **Empty state & 404 kustom**: Saat pencarian tidak menemukan hasil atau URL salah, pengguna mendapat ilustrasi `nobooks.png` dengan copy ramah agar tidak terjebak di layar kosong.
+- **Promo kilat**: Section countdown memakai hook `useCountdown` yang sinkron dengan data buku flash sale.
+- **Modular layout**: `Header`, `Hero`, `LandingContent`, dan `Footer` dipisah supaya mudah dikembangkan.
 
-## Data Fetching (Axios)
-`src/lib/api.tsx` centralizes the DummyJSON request and normalizes the payload before it reaches the UI.
+## Contoh Fetch API (Axios)
+`src/lib/api.tsx` menormalisasi data dari DummyJSON sebelum dipakai komponen.
 
 ```ts
 import axios from 'axios';
@@ -42,8 +42,8 @@ export async function fetchBooks(): Promise<Books[]> {
 }
 ```
 
-## Real-time Search Logic
-The combination of `SearchBar`, `useBooks`, and `useFilteredBooks` delivers instant feedback while you type. The hook memoizes filtering by query and category to avoid unnecessary renders.
+## Logika Pencarian Real-time
+`useFilteredBooks` melakukan filtering berdasarkan query dan kategori secara memoized supaya performa stabil.
 
 ```ts
 import { useMemo } from 'react';
@@ -72,22 +72,22 @@ export function useFilteredBooks(
 }
 ```
 
-`SearchBar` exposes an input and filter toggle that uses the `SlidersHorizontal` icon from Lucide, keeps focus states vivid, and collapses nicely on mobile. When filtering removes all items, `BookGrid` swaps to the illustrated empty state component.
+Komponen `SearchBar` menampilkan input dan tombol filter dengan ikon `SlidersHorizontal`. Ketika daftar hasil kosong, `BookGrid` otomatis mengganti tampilan ke empty state ilustratif.
 
-## Getting Started
-1. **Install** dependencies: `npm install`
-2. **Run locally**: `npm run dev`
-3. Visit `http://localhost:3000` to explore the catalog. Resize the browser to verify the grid transitions from one to three columns, and try both matching and non-matching queries to see the empty state.
+## Cara Menjalankan
+1. Install dependency: `npm install`
+2. Jalankan dev server: `npm run dev`
+3. Buka `http://localhost:3000`, resize browser untuk melihat transisi grid mobile ↔ desktop, lalu coba query yang relevan dan yang tidak ada untuk memunculkan empty state.
 
-## Project Layout
-- `src/components` – Modular UI (header, hero, search, cards, empty state, flash sale)
-- `src/hooks` – Data fetching (`useBooks`), countdown timer, and filtering logic
-- `src/lib/api.tsx` – Axios-powered API client
-- `public/` – Marketing assets and `showcase.png` screenshot referenced above
+## Struktur Proyek
+- `src/components` – UI modular (header, hero, kartu, search, empty state, flash sale, dll.)
+- `src/hooks` – Hooks `useBooks`, `useCountdown`, dan `useFilteredBooks`
+- `src/lib/api.tsx` – Klien API berbasis Axios
+- `public/` – Asset marketing termasuk `showcase.png`
 
-## Deployment Notes
-- Duplicate `.env.example` into `.env.local` and update `NEXT_PUBLIC_SITE_URL` with your final domain (e.g., the Vercel preview/production URL). This value feeds both `robots.txt` and `sitemap.xml`.
-- `src/app/sitemap.ts` exposes the canonical `/sitemap.xml` endpoint, while `src/app/robots.ts` links to it so crawlers can pick it up automatically.
-- Vercel will detect the Next.js app automatically—no extra config is required beyond the environment variable above.
+## Catatan Deployment
+- Duplikasi `.env.example` ke `.env.local`, isi `NEXT_PUBLIC_SITE_URL` dengan domain akhir (mis. URL Vercel). Nilai ini dipakai oleh `robots.txt` dan `sitemap.xml`.
+- `src/app/sitemap.ts` menyediakan endpoint sitemap, sedangkan `src/app/robots.ts` menunjuk ke sitemap tersebut.
+- Deploy ke Vercel tidak butuh konfigurasi ekstra: cukup hubungkan repo dan set environment variable di dashboard.
 
-Feel free to fork the repo, record your own showcase video, and submit the links per the hiring brief.
+Silakan fork, rekam video showcase (resize + search + empty state), lalu kirim link repo & video sesuai brief.
