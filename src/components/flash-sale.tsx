@@ -11,16 +11,16 @@ export function FlashSaleSection({
   return (
     <section className='mt-20 rounded-[32px] p-6 sm:p-8 lg:p-10'>
       <SectionHeading
-        eyebrow='Flash Sale'
+        eyebrow='Promo Kilat'
         title='Kejar deal terbatas hari ini'
-        description='Stok sangat terbatas. Setiap buku mendapatkan diskon tambahan saat countdown berakhir.'
+        description='Stok sangat terbatas. Setiap buku mendapatkan diskon tambahan saat hitung mundur berakhir.'
         // showIcon
       />
       <div className='mt-10 flex flex-wrap items-center justify-center gap-6 text-center text-blue-900'>
         {[
-          ['Hours', timeLeft.hours],
-          ['Minutes', timeLeft.minutes],
-          ['Seconds', timeLeft.seconds],
+          ['Jam', timeLeft.hours],
+          ['Menit', timeLeft.minutes],
+          ['Detik', timeLeft.seconds],
         ].map(([label, value]) => (
           <div
             key={label}

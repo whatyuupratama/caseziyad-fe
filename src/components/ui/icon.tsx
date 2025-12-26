@@ -7,7 +7,7 @@ export default function Icon() {
 
       <div>
         <p className='text-xl font-bold text-slate-900'>ZiyadBooks</p>
-        <p className='text-xs text-slate-500'>Book Store Website</p>
+        <p className='text-xs text-slate-500'>Platform katalog buku</p>
       </div>
     </div>
   );

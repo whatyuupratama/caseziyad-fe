@@ -25,7 +25,7 @@ export function SectionHeading({
         {showIcon && (
           <Image
             src='/icon.png'
-            alt='Section icon'
+            alt='Ikon bagian'
             width={40}
             height={40}
             className='h-9 w-9'

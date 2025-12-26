@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-const navItems = ['Home', 'Service', 'Contact', 'Books'];
+const navItems = ['Beranda', 'Layanan', 'Kontak', 'Koleksi'];
 import Icon from '@/components/ui/icon';
 const Header = () => {
   return (
@@ -21,10 +20,10 @@ const Header = () => {
             ))}
           </nav>
           <button className='rounded-xl border border-blue-100 bg-white px-5 py-2 text-sm font-semibold text-blue-900 shadow-sm transition hover:border-blue-200 cursor-pointer'>
-            Log In
+            Masuk
           </button>
           <button className='rounded-xl bg-blue-900 px-5 py-2 text-sm font-semibold text-white  cursor-pointer transition hover:bg-blue-800'>
-            Sign Up
+            Daftar
           </button>
         </div>
       </div>

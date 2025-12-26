@@ -32,7 +32,7 @@ const Hero = () => {
               <img
                 key={image}
                 src={image}
-                alt={`Promotional banner ${index + 1}`}
+                alt={`Banner promo ${index + 1}`}
                 className='h-full w-full flex-shrink-0 object-cover'
               />
             ))}
@@ -48,7 +48,7 @@ const Hero = () => {
               className={`h-2.5 w-2.5 rounded-full border border-white transition ${
                 index === activeIndex ? 'bg-white' : 'bg-white/40'
               }`}
-              aria-label={`Slide ${index + 1}`}
+              aria-label={`Slide gambar ke-${index + 1}`}
             />
           ))}
         </div>

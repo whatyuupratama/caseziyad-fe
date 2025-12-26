@@ -2,23 +2,23 @@ import React from 'react';
 import Icon from '@/components/ui/icon';
 
 const bookCategories = [
-  'Action',
-  'Adventure',
-  'Comedy',
-  'Crime',
+  'Aksi',
+  'Petualangan',
+  'Komedi',
+  'Kriminal',
   'Drama',
-  'Fantasy',
-  'Horror',
+  'Fantasi',
+  'Horor',
 ];
 
 const quickLinks = [
-  'About Us',
-  'Contact Us',
-  'Products',
-  'Login',
-  'Sign Up',
-  'Cart',
-  'Checkout',
+  'Tentang Kami',
+  'Kontak',
+  'Produk',
+  'Masuk',
+  'Daftar',
+  'Keranjang',
+  'Pembayaran',
 ];
 
 const Footer = () => {
@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
 
             <div>
-              <p className='text-sm font-semibold text-black'>Follow Us</p>
+              <p className='text-sm font-semibold text-black'>Ikuti Kami</p>
               <div className='mt-4 flex gap-3'>
                 {['Fb', 'Yt', 'Tw', 'Ln', 'Ig'].map((label) => (
                   <a
@@ -54,7 +54,7 @@ const Footer = () => {
           <div className='grid gap-10 sm:grid-cols-2 lg:grid-cols-3'>
             <div>
               <p className='text-sm font-semibold uppercase tracking-wide text-slate-900'>
-                Book Categories
+                Kategori Buku
               </p>
               <ul className='mt-5 space-y-2 text-sm text-slate-500'>
                 {bookCategories.map((item) => (
@@ -70,7 +70,7 @@ const Footer = () => {
 
             <div>
               <p className='text-sm font-semibold uppercase tracking-wide text-slate-900'>
-                Quick Links
+                Tautan Cepat
               </p>
               <ul className='mt-5 space-y-2 text-sm text-slate-500'>
                 {quickLinks.map((item) => (
@@ -85,7 +85,7 @@ const Footer = () => {
             </div>
             <div>
               <p className='text-sm font-semibold uppercase tracking-wide text-slate-900'>
-                Our Store
+                Toko Kami
               </p>
 
               <div className='mt-5 space-y-3 text-sm text-slate-500'>
@@ -114,13 +114,13 @@ const Footer = () => {
           </p>
           <div className='flex gap-6'>
             <a href='#' className='hover:text-purple-600'>
-              Privacy
+              Kebijakan Privasi
             </a>
             <a href='#' className='hover:text-purple-600'>
-              Terms
+              Syarat Layanan
             </a>
             <a href='#' className='hover:text-purple-600'>
-              Cookies
+              Kebijakan Cookie
             </a>
           </div>
         </div>
