@@ -1,5 +1,5 @@
 import Header from '@/components/header';
-import Hero from '@/components/hero';
+import Hero from '@/components/hero-section';
 import Footer from '@/components/footer';
 import LandingContent from '@/components/landing-content';
 

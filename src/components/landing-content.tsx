@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import SearchBar from '@/components/searchbar';
-import { SearchResultsSection } from '@/components/ui/search-results-section';
+import { SearchResultsSection } from '@/components/ui/search-results';
 
 import { FlashSaleSection } from '@/components/flash-sale';
 import { useCountdown } from '@/hooks/useCountdown';
